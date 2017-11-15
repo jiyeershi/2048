@@ -102,17 +102,25 @@ end
 移动方向上的所有单行或单列的所有格子进行移动合并的逻辑：
 1、每个数组进行arr.length 轮比较，每一轮最多比较 i - mergePos 次(i为当前需要操作的元素的位置，mergePos为上一次合并元素的下一位置)
 2、依次比较i号位元素与其前一个元素，
-如果相等则两者合并到他们的靠前位置，查找结束，进行下一轮元素查找
+如果相等则两者合并到他们中靠前的那个位置，查找结束，进行下一轮元素查找
 如果不相等则区分前一位元素是否为0，为0，则两元素进行交换，然后继续向前查找
 如果不相等且前一位置不为0，则进行下一轮查找
 新增：0不移动
+
+以数B向数A合并进行举例：
+A        B       动作
+0       非0     B交换A
+0	     0		A,B静止
+非0 ~=  非0	    A,B静止
+非0 ==  非0	    A,B合并
+非0 ~=   0	    A,B静止
 ]]
 local move = function(arr)
 	local moveEleRule = {}
 	local cur = 1
 	local to = 1
 	local lastMergePos = 1
-	for i=1,maxCol do
+	for i=1,#arr do
 		cur = i
 		to = 1
 		local isMerge = false
@@ -134,7 +142,7 @@ local move = function(arr)
 				to = j-1
 			-- elseif arr[j] == 0 then
 			-- 	to = j
-			else --不等于0
+			else --arr[j] == 0 or (arr[j-1] ~= arr[j] and arr[j-1] ~= 0)
 				to = j
 				break
 			end
@@ -164,6 +172,12 @@ local printMatrix = function(arr)
 	print("printMatrix---->end")
 end
 
+--[[
+输出所有位置动作序列:
+当前位置，移动到的位置，是否有合并，合并后的结果值
+{["cur"]=cur, ["to"]=to, ["isMerge"] = isMerge, ["mergeRet"]=mergeRet}
+...
+]]
 function State.MoveDir(dir)
 --按行进方向取出单行 或单列 数组
 --[[

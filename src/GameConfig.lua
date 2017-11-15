@@ -1,0 +1,26 @@
+MAXROW = 4
+MAXCOL = 4
+
+COLOR_T = {
+COLOR_1 = cc.c3b(100, 20, 77),
+COLOR_2 = cc.c3b(165, 42, 77),
+COLOR_4 = cc.c3b(165, 153, 42),
+COLOR_8 = cc.c3b(130, 165, 42),
+COLOR_16 = cc.c3b(107, 175, 88),
+COLOR_32 = cc.c3b(107, 115, 188),
+COLOR_64 = cc.c3b(125, 32, 78),
+COLOR_128 = cc.c3b(182, 103, 82),
+COLOR_256 = cc.c3b(21, 88, 21),
+COLOR_512 = cc.c3b(203, 233, 203),
+COLOR_1024 = cc.c3b(128, 0, 128),
+COLOR_2048 = cc.c3b(255, 192, 208),
+}
+
+--方向定义
+MOVEUP=1
+MOVEDOWN=2
+MOVELEFT=3
+MOVERIGHT=4
+
+--游戏通关最大结果数
+MAX_GAMESUCCESS_NUM = 2048

@@ -1,24 +1,30 @@
 
 cc.FileUtils:getInstance():setPopupNotify(false)
+cc.FileUtils:getInstance():addSearchPath("src/")
+cc.FileUtils:getInstance():addSearchPath("res/")
 
-require "config"
+
+print (package.path)
+CC_USE_FRAMEWORK = true
+-- require "config"
 require "cocos.init"
+require "GameConfig"
 
-local TestScene = require "app.scenes.MainScene"
+local TestScene = require "GameScene"
 
 local function main()
     -- require("app.MyApp"):create():run()
     cc.FileUtils:getInstance():addSearchPath("res/")
 	-- cc.Director:getInstance():setContentScaleFactor(640 / 320)
 
-	display.loadSpriteFrames("image/player.plist", "image/player.pvr.ccz")
+	-- display.loadSpriteFrames("image/player.plist", "image/player.pvr.ccz")
 
-	-- display.addSpriteFrames("image/player.plist", "image/player.pvr.ccz")
-	audio.preloadMusic("sound/background.mp3") 
-	audio.preloadSound("sound/button.wav")
-	audio.preloadSound("sound/ground.mp3")
-	audio.preloadSound("sound/heart.mp3")
-	audio.preloadSound("sound/hit.mp3")
+	-- -- display.addSpriteFrames("image/player.plist", "image/player.pvr.ccz")
+	-- audio.preloadMusic("sound/background.mp3") 
+	-- audio.preloadSound("sound/button.wav")
+	-- audio.preloadSound("sound/ground.mp3")
+	-- audio.preloadSound("sound/heart.mp3")
+	-- audio.preloadSound("sound/hit.mp3")
 
     local testScene = TestScene:create()
     cc.Director:getInstance():runWithScene(testScene)

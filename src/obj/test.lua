@@ -48,11 +48,34 @@ end
 -- 	end
 -- end
 
-m = 1
-if m == 0 then
-	print("m == 0")
-else if m == 1 then
-	print("m == 1")
-else if m == 2 then
-	print("m == 2")
+-- m = 1
+-- if m == 0 then
+-- 	print("m == 0")
+-- else if m == 1 then
+-- 	print("m == 1")
+-- else if m == 2 then
+-- 	print("m == 2")
+-- end
+arr = {1}
+print(arr[1])
+
+a = 1
+if a == 1 then
+	print(1)
+elseif a == 2 then
+	print(2)
+else
+	print(3)
 end
+
+a = {
+	[1]  = 1,
+	[3]  = 3,
+	["11"] = 11,
+
+}
+
+for k,v in ipairs(a) do
+	print(k,v)
+end
+

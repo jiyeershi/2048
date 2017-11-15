@@ -30,3 +30,5 @@ HEART_TAG    = 2
 BIRD_TAG     = 3
 AIRSHIP_TAG  = 4
 PLAYER_TAG   = 5
+
+print (package.path)

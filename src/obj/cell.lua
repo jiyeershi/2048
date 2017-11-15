@@ -1,5 +1,5 @@
 --[[
-移动方格
+移动方格类
 ]]
 local cell = class("cell", cc.Sprite)
 local State = require "obj.State"

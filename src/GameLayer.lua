@@ -205,7 +205,6 @@ function GameLayer:startGame()
 	for i=1,2 do
 		self:randGenerateCell(2)
 	end
-	--
 end
 
 function GameLayer:randGenerateCell(num)
@@ -247,10 +246,6 @@ function GameLayer:canMove()
 	return canMove
 end
 
-function GameLayer:Game( ... )
-	-- body
-end
-
 function GameLayer:gameOver(isSuccess)
 	print("Game Over...")
 	if not self.gameOverLab then
@@ -275,9 +270,7 @@ end
 
 function GameLayer:onEnter( )
 	self.super:onEnter()
-	-- local result, row, 
 end
-
 
 function GameLayer:onExit( )
 	self.super:onExit()
